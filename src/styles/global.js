@@ -1,9 +1,23 @@
 import { StyleSheet } from 'react-native';
 
+export const colors = {
+    background: '#ffffff',
+    title: '#000000',
+    textSecondary: '#666666',
+}
+
 export const globalStyles = StyleSheet.create({
     container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
+        marginLeft: 10,
+        marginTop: 10,
+    },
+    SectionTitle: {
+        color: colors.title,
+        fontSize: 24,
+        fontWeight: 'bold',
+    },
+    header: {
+        fontSize: 32,
+        fontWeight: 'bold',
     },
 })
