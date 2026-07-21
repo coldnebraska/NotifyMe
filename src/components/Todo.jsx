@@ -1,18 +1,10 @@
 import {Text, View, StyleSheet} from 'react-native';
 
-export default function Alarm() {
+export default function ToDo({ name }) {
     return (
         <View style={styles.container}>
-            <View>
-                <Text>6:00</Text>
-                <Text>AM</Text>
-            </View>
-
-            <View>
-                <Text>Alarm Name, Alarm Repeat</Text>
-            </View>
-
-            <Text>Switch Button</Text>
+            <Text>{"[ ]"}</Text>
+            <Text>{name}</Text>
         </View>
     )
 }
@@ -20,11 +12,11 @@ export default function Alarm() {
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
         alignItems: 'center',
         padding: 10,
+        gap: 6,
     },
-    alarm: {
+    notification: {
         fontSize: 18,
         fontWeight: 'bold',
     },
