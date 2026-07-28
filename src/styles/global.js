@@ -4,6 +4,7 @@ export const colors = {
     background: '#ffffff',
     title: '#000000',
     textSecondary: '#666666',
+    backgroundSecondary: '#ccc',
 }
 
 export const globalStyles = StyleSheet.create({

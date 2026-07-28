@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, FlatList, ScrollView, Pressable } from "react-n
 import { useRouter } from "expo-router"
 import { SafeAreaView } from "react-native-safe-area-context"
 import { Ionicons } from "@expo/vector-icons"
-import { globalStyles } from "../../styles/global"
+import { colors, globalStyles } from "../../styles/global"
 import HomeHeader from "../../components/HomeHeader"
 import Notification from "../../components/Notification"
 import Todo from "../../components/Todo"
@@ -26,6 +26,8 @@ const ToDos = [
   { id: "10", name: "Work on coding mobile app", completed: true },
   { id: "11", name: "Read 2 chapters", completed: false },
   { id: "12", name: "Shower", completed: false },
+  { id: "13", name: "Meditate", completed: true },
+  { id: "14", name: "Grocery shopping", completed: false },
 ]
 
 export default function HomeScreen() {
@@ -75,7 +77,8 @@ export default function HomeScreen() {
         keyExtractor={(item) => item.id}
         showsVerticalScrollIndicator={false}
         ListEmptyComponent={<Text style={{ paddingLeft: 10 }}>No todos yet.</Text>}
-        ItemSeparatorComponent={() => <View style={{ borderBottomWidth: 1, borderBottomColor: "#ccc" }} />}
+        ItemSeparatorComponent={() => <View style={{ borderBottomWidth: 1, borderBottomColor: colors.backgroundSecondary }} />}
+        fadingEdgeLength={15}
       />
     </SafeAreaView>
   )
@@ -88,7 +91,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     borderBottomWidth: 1,
-    borderBottomColor: "#ccc",
+    borderBottomColor: colors.backgroundSecondary,
     paddingBottom: 5,
   },
 })

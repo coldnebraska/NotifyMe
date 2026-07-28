@@ -1,6 +1,7 @@
 import { Ionicons } from "@expo/vector-icons";
 import Slider from "@react-native-community/slider";
 import { useState } from "react";
+import { colors } from "../styles/global";
 import {
     Modal,
     Pressable,
@@ -183,7 +184,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: 40,
     padding: 10,
-    backgroundColor: "#d3d3d3",
+    backgroundColor: colors.backgroundSecondary,
     borderRadius: 10,
   },
   timeContainer: {
