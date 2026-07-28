@@ -9,17 +9,24 @@ export default function HomeHeader() {
     })
     return (
         <View style={globalStyles.container}>
-            <Text style={globalStyles.header}>NotifyMe</Text>
+            <Text style={styles.header}>Welcome Back, John!</Text>
             <Text style={styles.date}>{currentDate}</Text>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
+    header: {
+        fontSize: 26,
+        fontWeight: 'bold',
+        textAlign: 'center',
+    },
     date: {
-        fontSize: 14,
+        fontSize: 18,
+        textAlign: "center",
+        fontWeight: "bold",
         color: colors.textSecondary,
         marginTop: 4,
-        marginBottom: 30,
+        marginBottom: 10,
     },
 })

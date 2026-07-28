@@ -40,8 +40,6 @@ export default function HomeScreen() {
           <View>
             <HomeHeader />
 
-            <Text style={styles.welcomeMsg}>Welcome Back, John!</Text>
-
             <View style={styles.container}>
               <Text style={globalStyles.SectionTitle}>Notifications</Text>
 
@@ -84,10 +82,6 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
-  welcomeMsg: {
-    textAlign: "center",
-    fontSize: 18,
-  },
   container: {
     margin: 10,
     flexDirection: "row",
