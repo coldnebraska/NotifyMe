@@ -1,9 +1,14 @@
-import {Text, View, StyleSheet} from 'react-native';
+import {Text, View, StyleSheet, Pressable} from 'react-native';
+import { useState } from 'react';
 
-export default function ToDo({ name }) {
+export default function ToDo({ name, completed }) {
+    const [isCompleted, setIsCompleted] = useState(completed);
+
     return (
         <View style={styles.container}>
-            <Text>{"[ ]"}</Text>
+            <Pressable onPress={() => setIsCompleted(!isCompleted)}>
+                <Text>{isCompleted ? "[✓]" : "[   ]"}</Text>
+            </Pressable>
             <Text>{name}</Text>
         </View>
     )
@@ -15,9 +20,5 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 10,
         gap: 6,
-    },
-    notification: {
-        fontSize: 18,
-        fontWeight: 'bold',
     },
 })

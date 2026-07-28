@@ -9,21 +9,22 @@ import Todo from "../../components/Todo"
 const Notifications = [
   { id: "1", time: "6:00", timeOfDay: "AM", name: "Wake Up", repeat: "Daily", volume: 100 },
   { id: "2", time: "9:00", timeOfDay: "AM", name: "Breakfast", repeat: "Daily", volume: 50 },
+  { id: "3", time: "6:00", timeOfDay: "PM", name: "Leave for volleyball", repeat: "Weekly", volume: 0 },
 ]
 
 const ToDos = [
-  { id: "1", name: "Complete project proposal" },
-  { id: "2", name: "Schedule team meeting" },
-  { id: "3", name: "Complete project proposal" },
-  { id: "4", name: "Schedule team meeting" },
-  { id: "5", name: "Complete project proposal" },
-  { id: "6", name: "Schedule team meeting" },
-  { id: "7", name: "Complete project proposal" },
-  { id: "8", name: "Schedule team meeting" },
-  { id: "9", name: "Complete project proposal" },
-  { id: "10", name: "Schedule team meeting" },
-  { id: "11", name: "Complete project proposal" },
-  { id: "12", name: "Schedule team meeting" },
+  { id: "1", name: "Complete project proposal", completed: false },
+  { id: "2", name: "Schedule team meeting", completed: false },
+  { id: "3", name: "Dishes", completed: true },
+  { id: "4", name: "Laundry", completed: true },
+  { id: "5", name: "Clean apartment", completed: false },
+  { id: "6", name: "Pack for moving", completed: false },
+  { id: "7", name: "Call Ryan", completed: false },
+  { id: "8", name: "Workout", completed: true },
+  { id: "9", name: "Build legos", completed: false },
+  { id: "10", name: "Work on coding mobile app", completed: true },
+  { id: "11", name: "Read 2 chapters", completed: false },
+  { id: "12", name: "Shower", completed: false },
 ]
 
 export default function HomeScreen() {
@@ -41,8 +42,8 @@ export default function HomeScreen() {
             <View style={styles.container}>
               <Text style={globalStyles.SectionTitle}>Notifications</Text>
 
-              <Pressable style={styles.addButton}>
-                <Ionicons name="add" size={24} color="black" />
+              <Pressable>
+                <Text>View All</Text>
               </Pressable>
             </View>
 
@@ -60,8 +61,8 @@ export default function HomeScreen() {
             <View style={styles.container}>
               <Text style={globalStyles.SectionTitle}>To Do</Text>
 
-              <Pressable style={styles.addButton}>
-                <Ionicons name="add" size={24} color="black" />
+              <Pressable>
+                <Text>View All</Text>
               </Pressable>
             </View>
           </View>
@@ -86,18 +87,11 @@ const styles = StyleSheet.create({
   },
   container: {
     margin: 10,
-    position: "relative",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     borderBottomWidth: 1,
     borderBottomColor: "#ccc",
     paddingBottom: 5,
-  },
-  addButton: {
-    position: "absolute",
-    right: 0,
-    top: 0,
-  },
-  addButtonText: {
-    fontSize: 24,
-    fontWeight: "bold",
   },
 })
