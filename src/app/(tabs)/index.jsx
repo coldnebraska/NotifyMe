@@ -55,7 +55,7 @@ export default function HomeScreen() {
               )}
               keyExtractor={(item) => item.id}
               showsHorizontalScrollIndicator={false}
-              listEmptyComponent={<Text>No notifications yet.</Text>}
+              ListEmptyComponent={<Text style={{ paddingLeft: 10 }}>No notifications yet.</Text>}
             />
 
             <View style={styles.container}>
@@ -73,7 +73,7 @@ export default function HomeScreen() {
         )}
         keyExtractor={(item) => item.id}
         showsVerticalScrollIndicator={false}
-        listEmptyComponent={<Text>No todos yet.</Text>}
+        ListEmptyComponent={<Text style={{ paddingLeft: 10 }}>No todos yet.</Text>}
         ItemSeparatorComponent={() => <View style={{ borderBottomWidth: 1, borderBottomColor: "#ccc" }} />}
       />
     </SafeAreaView>
