@@ -1,4 +1,5 @@
 import { StyleSheet, Text, View, FlatList, ScrollView, Pressable } from "react-native"
+import { useRouter } from "expo-router"
 import { SafeAreaView } from "react-native-safe-area-context"
 import { Ionicons } from "@expo/vector-icons"
 import { globalStyles } from "../../styles/global"
@@ -28,6 +29,8 @@ const ToDos = [
 ]
 
 export default function HomeScreen() {
+  const router = useRouter()
+
   return (
     <SafeAreaView>
 
@@ -42,7 +45,7 @@ export default function HomeScreen() {
             <View style={styles.container}>
               <Text style={globalStyles.SectionTitle}>Notifications</Text>
 
-              <Pressable>
+              <Pressable onPress={() => router.push("/notifications")}>
                 <Text>View All</Text>
               </Pressable>
             </View>
@@ -61,7 +64,7 @@ export default function HomeScreen() {
             <View style={styles.container}>
               <Text style={globalStyles.SectionTitle}>To Do</Text>
 
-              <Pressable>
+              <Pressable onPress={() => router.push("/todo")}>
                 <Text>View All</Text>
               </Pressable>
             </View>
