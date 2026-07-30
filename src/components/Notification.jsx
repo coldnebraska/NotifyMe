@@ -36,6 +36,7 @@ export default function Notification({
 
   const handleToggle = (value) => {
     if (!value) {
+      setIsEnabled(false)
       setShowDisableOptions(true);
       return;
     }
@@ -50,6 +51,9 @@ export default function Notification({
     if (choice === "mute") {
       setIsEnabled(false);
       return;
+    } else if (choice === 'cancel') {
+      setIsEnabled(true)
+      return
     }
 
     setIsEnabled(false);
@@ -87,7 +91,7 @@ export default function Notification({
           >
             <Pressable
               style={styles.optionBackdrop}
-              onPress={() => setShowDisableOptions(false)}
+              onPress={() => handleDisableChoice("cancel")}
             />
 
             <View style={styles.optionModalWrapper}>
@@ -110,7 +114,7 @@ export default function Notification({
 
                 <TouchableOpacity
                   style={styles.optionButtonCancel}
-                  onPress={() => setShowDisableOptions(false)}
+                  onPress={() => handleDisableChoice("cancel")}
                   activeOpacity={0.8}
                 >
                   <Text style={styles.optionButtonCancelText}>Cancel</Text>
@@ -179,13 +183,15 @@ export default function Notification({
 const styles = StyleSheet.create({
   container: {
     marginHorizontal: 10,
+    marginBottom: 15,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
     gap: 40,
     padding: 10,
-    backgroundColor: colors.backgroundSecondary,
+    backgroundColor: colors.lightMode.bg,
     borderRadius: 10,
+    boxShadow: "0px 2px 2px hsla(0, 0%, 0%, 0.07), 0px 4px 4px hsla(0, 0%, 0%, 0.15)",
   },
   timeContainer: {
     flexDirection: "row",
@@ -194,16 +200,19 @@ const styles = StyleSheet.create({
   time: {
     fontSize: 48,
     fontWeight: "bold",
+    color: colors.lightMode.text,
   },
   timeOfDay: {
     fontSize: 30,
     fontWeight: "bold",
+    color: colors.lightMode.text,
     paddingBottom: 5,
   },
   timeDataContainer: {
     gap: 10,
   },
   notificationText: {
+    color: colors.lightMode.textMuted,
     fontSize: 16,
     fontWeight: "normal",
   },
@@ -217,15 +226,18 @@ const styles = StyleSheet.create({
     transform: [{ scaleX: 1.2 }, { scaleY: 1.2 }],
   },
   volumeContainer: {
-    flexDirection: "row",
+    backgroundColor: colors.lightMode.bgLight,
+    borderRadius: 10,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
     alignItems: "center",
-    justifyContent: "flex-end",
-    gap: 5,
     position: "relative",
+    borderColor: colors.lightMode.bgDark,
+    borderWidth: 1,
+    boxShadow: "0px 1px 1px hsla(0, 0%, 0%, 0.07), 0px 3px 3px hsla(0, 0%, 0%, 0.15)",
   },
   backdrop: {
     flex: 1,
-    backgroundColor: "rgba(15, 23, 42, 0.25)",
   },
   modalWrapper: {
     position: "absolute",

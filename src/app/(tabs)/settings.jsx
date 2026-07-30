@@ -9,6 +9,7 @@ import {
     View,
 } from "react-native"
 import { SafeAreaView } from "react-native-safe-area-context"
+import { colors } from "../../styles/global"
 
 export default function SettingsScreen() {
   const [notificationsEnabled, setNotificationsEnabled] = useState(true)
@@ -96,7 +97,7 @@ export default function SettingsScreen() {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: "#ffffff",
+    backgroundColor: colors.lightMode.bgDark,
   },
   container: {
     padding: 20,
@@ -110,7 +111,7 @@ const styles = StyleSheet.create({
   section: {
     marginBottom: 24,
     borderRadius: 14,
-    backgroundColor: "#f8f8f8",
+    backgroundColor: colors.lightMode.bg,
     padding: 16,
   },
   sectionTitle: {
@@ -124,7 +125,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingVertical: 14,
     borderBottomWidth: 1,
-    borderBottomColor: "#e3e3e3",
+    borderBottomColor: colors.lightMode.bgDark,
   },
   sliderSection: {
     paddingVertical: 14,
@@ -141,11 +142,11 @@ const styles = StyleSheet.create({
   },
   sliderValue: {
     fontSize: 16,
-    color: "#6b7280",
+    color: colors.lightMode.textMuted,
   },
   optionLabel: {
     fontSize: 16,
-    color: "#222222",
+    color: colors.lightMode.text,
   },
   navItem: {
     paddingVertical: 16,
@@ -153,6 +154,6 @@ const styles = StyleSheet.create({
   },
   navText: {
     fontSize: 16,
-    color: "#222222",
+    color: colors.lightMode.text,
   },
 });

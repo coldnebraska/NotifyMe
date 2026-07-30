@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
         textAlign: "center",
         fontWeight: "bold",
-        color: colors.textSecondary,
+        color: colors.lightMode.textMuted,
         marginTop: 4,
         marginBottom: 10,
     },

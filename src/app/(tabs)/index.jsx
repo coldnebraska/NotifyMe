@@ -34,8 +34,7 @@ export default function HomeScreen() {
   const router = useRouter()
 
   return (
-    <SafeAreaView>
-
+    <SafeAreaView style={{ flex: 1, backgroundColor: colors.lightMode.bgDark}}>
       <FlatList
         data={ToDos}
         ListHeaderComponent={
@@ -58,7 +57,7 @@ export default function HomeScreen() {
               )}
               keyExtractor={(item) => item.id}
               showsHorizontalScrollIndicator={false}
-              ListEmptyComponent={<Text style={{ paddingLeft: 10 }}>No notifications yet.</Text>}
+              ListEmptyComponent={<Text style={{ paddingLeft: 10, color: colors.lightMode.textMuted }}>No notifications yet.</Text>}
             />
 
             <View style={styles.container}>
@@ -76,8 +75,8 @@ export default function HomeScreen() {
         )}
         keyExtractor={(item) => item.id}
         showsVerticalScrollIndicator={false}
-        ListEmptyComponent={<Text style={{ paddingLeft: 10 }}>No todos yet.</Text>}
-        ItemSeparatorComponent={() => <View style={{ borderBottomWidth: 1, borderBottomColor: colors.backgroundSecondary }} />}
+        ListEmptyComponent={<Text style={{ paddingLeft: 10, color: colors.lightMode.textMuted }}>No todos yet.</Text>}
+        ItemSeparatorComponent={() => <View style={{ borderBottomWidth: 1, borderBottomColor: colors.darkMode.textMuted }} />}
         fadingEdgeLength={15}
       />
     </SafeAreaView>
@@ -91,7 +90,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     borderBottomWidth: 1,
-    borderBottomColor: colors.backgroundSecondary,
+    borderBottomColor: colors.darkMode.textMuted,
     paddingBottom: 5,
   },
 })
