@@ -1,5 +1,5 @@
 import {colors, globalStyles} from '../styles/global'
-import {Text, View, ScrollView, StyleSheet} from 'react-native'
+import {Text, View, StyleSheet} from 'react-native'
 
 export default function HomeHeader() {
     const currentDate = new Date().toLocaleDateString('en-US', {
@@ -9,7 +9,7 @@ export default function HomeHeader() {
     })
     return (
         <View style={globalStyles.container}>
-            <Text style={styles.header}>Welcome Back, John!</Text>
+            <Text style={styles.header}>Welcome Back, David!</Text>
             <Text style={styles.date}>{currentDate}</Text>
         </View>
     )

@@ -1,7 +1,6 @@
-import { StyleSheet, Text, View, FlatList, ScrollView, Pressable } from "react-native"
+import { StyleSheet, Text, View, FlatList, Pressable } from "react-native"
 import { useRouter } from "expo-router"
 import { SafeAreaView } from "react-native-safe-area-context"
-import { Ionicons } from "@expo/vector-icons"
 import { colors, globalStyles } from "../../styles/global"
 import HomeHeader from "../../components/HomeHeader"
 import Notification from "../../components/Notification"

@@ -16,6 +16,12 @@ export default function TabLayout() {
             <Ionicons name="add-circle" size={size} color={color} />
             ),
         }} />
+        <Tabs.Screen name="schedule" options={{
+            title: "Schedule",
+            tabBarIcon: ({ color, size }) => (
+            <Ionicons name="calendar" size={size} color={color} />
+            ),
+        }} />
         <Tabs.Screen name="settings" options={{
             title: "Settings",
             tabBarIcon: ({ color, size }) => (
