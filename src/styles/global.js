@@ -13,8 +13,8 @@ export const colors = {
         bgDark: 'hsl(0, 0%, 90%)',
         bg: 'hsl(0, 0%, 95%)',
         bgLight: 'hsl(0, 0%, 100%)',
-        text: 'hsl(0, 0%, 5%)',
-        textMuted: 'hsl(0, 0%, 30%)',
+        text: 'hsl(217, 90%, 16%)',
+        textMuted: 'hsl(217, 90%, 25%)',
     },
 }
 
